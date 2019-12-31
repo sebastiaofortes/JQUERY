@@ -1,0 +1,17 @@
+<script type="text/javascript"
+       src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+            jQuery(function($){                
+                $('#form-exemplo').submit(function(){                    
+                    $.post('envia-email.php', $('#form-exemplo input'), function(retorno){                        
+                        alert(retorno);
+                    }, 'html');
+                    
+                    return false;
+                });
+            });
+        </script>
+<form method="post" id="form-exemplo">
+            <input type="text" name="nome" value="">
+            <button type="submit">Enviar</button>
+        </form>
